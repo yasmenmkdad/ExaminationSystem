@@ -70,6 +70,8 @@ namespace ExaminationSystem
             chooseExamCourseForm1.Visible = false;
             #endregion
 
+            Profile_label_StudentName.Text = "ys";
+
         }
 
         private void button_Exam_Click(object sender, EventArgs e)
@@ -107,9 +109,10 @@ namespace ExaminationSystem
             Control[] Controls = userControl_Profile.Controls.Find("comboBox1", false);
             Profile_ComboBoxCourses = (ComboBox)Controls[0];
 
-            UserControl userControl_Profile1 = profile1;
-            userControl_Profile1.Controls.Contains(new Label());
-            Control[] Controls1 = userControl_Profile1.Controls.Find("label_StudentName", false);
+            Profile_ComboBoxCourses.Items.Add(2);
+
+            userControl_Profile.Controls.Contains(new Label());
+            Control[] Controls1 = userControl_Profile.Controls.Find("label_StudentName", false);
             Profile_label_StudentName = (Label)Controls1[0];
         }
         private void LoadControlsExam()
@@ -117,7 +120,7 @@ namespace ExaminationSystem
             UserControl userControl_Exam = chooseExamCourseForm1;
             userControl_Exam.Controls.Contains(new ComboBox());
             Control[] Controls = userControl_Exam.Controls.Find("comboBox1", false);
-            Profile_ComboBoxCourses = (ComboBox)Controls[0];
+            Exam_ComboBoxCourses = (ComboBox)Controls[0];
             Profile_ComboBoxCourses.SelectedIndexChanged += ComboBox_item_Change;
 
             UserControl userControl_Exam2 = chooseExamCourseForm1;
